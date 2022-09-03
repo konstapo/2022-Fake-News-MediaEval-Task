@@ -171,6 +171,7 @@ The ***user_graph.csv*** file contains directed graph that describes connections
 
 #### Dataset remarks
 
+* Please be aware that in the development set the ordering of tweets and, consequently, users are the same across all the three subtasks and we use the same set of tweets and users here as well. However, in the test set ordering of users in the ***Text-Based Misinformation and Conspiracies Detection*** and ***Graph-Based Conspiracy Source Detection*** tasks are different and ***Graph and Text-Based Conspiracy Detection*** subtask uses it's own set of tweets and users. Thus predictions of the test set of the ***Text-Based Misinformation and Conspiracies Detection*** task cannot be efficiently used to predict labels for the ***Graph-Based Conspiracy Source Detection*** and ***Graph and Text-Based Conspiracy Detection*** subtasks.
 
 *All CSV files has the column headers as the very first line of the files*.
 
@@ -179,12 +180,6 @@ The ***user_graph.csv*** file contains directed graph that describes connections
 *All CSV files are UTF-8 encoded and stored in Linux-style text file format using only one line ending character (0x0A in hex, '\n' in C/C++)*.
 
 
-
-#### Full Test Sets
-
-Test sets fot all three subtasks consist of CSV files with the following structure.
-* *TweetID* - a FakeNews task internal tweet ID, do not match with the original tweet ID.
-* *Tweet Text* - full tweet text block. Note that this field ends with the end of the CSV file line and it can contain extra commas that are not separators.
 
 
 ## Submission
