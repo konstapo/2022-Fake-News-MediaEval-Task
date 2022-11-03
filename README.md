@@ -11,9 +11,9 @@ Spontaneous and intentional digital FakeNews wildfires over online social media 
 
 ## Task Schedule
 * 30 August: Development and test datasets release
-* 5 November: Runs due
-* 10 November: Results returned
-* 20 November: Working notes paper due
+* 15 November: Runs due
+* 20 November: Results returned
+* 28 November: Working notes paper due
 * December: MediaEval 2022 Workshop
 
 
