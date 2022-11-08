@@ -7,7 +7,9 @@ Spontaneous and intentional digital FakeNews wildfires over online social media 
 
 
 ## Announcements
-* **30 August 2021:** The development and test datasets are released.
+* **8 November 2022:** Submission requirements published.
+* **1 November 2022:** Task schedule updated.
+* **30 August 2022:** The development and test datasets are released.
 
 ## Task Schedule
 * 30 August: Development and test datasets release
@@ -186,12 +188,120 @@ The ***user_graph.csv*** file contains directed graph that describes connections
 
 ### Run Submissions
 
-TBA
+For this task, you may submit up to 6 runs for each of the three subtasks (
+***Text-Based Misinformation and Conspiracies Detection***, ***Graph-Based Conspiracy Source Detection***, and ***Graph and Text-Based Conspiracy Detection***). Please be sure to submit the following types of runs for each of the listed subtasks:
+
+1. **Required run:** automated classification based *only* on the provided in the development dataset tweet texts. It is not allowed to use any external data beyond the development set to train your model in this run. However, we allow using of any publicly available pre-trained models for this run.
+
+2-5. Optional runs: automated classification based *only* on the provided in the development dataset tweet texts. It is not allowed to use any external data beyond the development set to train your model in this runs. However, we allow using of any publicly available pre-trained models for this runs.
+
+6. **Optional run:**automated classification based *only-and-only* on the provided development dataset. It is not allowed to use any external data *nor* already pre-trained models in this run. This run ruslts will be ranked separately.
+
+Please note that for generating runs 1 to 5 in all subtasks participants are allowed to use only information that can be extracted from the provided datasets. For rins 1-5 we allow using any publicly available pre-trained models. Here we require you to include a direct download link and a paper reference for the used pre-trained model into your working notes paper. For run 6 only development set should be used to train your model. No pre-trained models are allowed in submission for run 6.
+Manual annotation of tweets of the provided test set is not allowed in any run.
 
 
 ### Submission Format
 
-TBA
+***Text-Based Misinformation and Conspiracies Detection*** subtask:
+Please submit runs in CSV format with the following fields defined:
+* *TweetID* - tweet ID matching the test dataset tweet ID.
+* *Assigned Class Label for Suppressed cures* - a class identifier value for the correcponding conspiracy theory in the papticular tweet, 3 == ***Promotes/Supports Conspiracy***, 2 == ***Discusses Consparacy***, 1 == ***Non-Conspiracy***, 0 == ***Cannot Determine*** (the same for the following Class Label fields). 
+* *Assigned Class Label for Behaviour and Mind Control* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Antivax* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Fake virus** - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Intentional Pandemic* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Harmful Radiation/ Influence* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Population reduction* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for New World Order* - aa class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Satanism* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+
+Tweet IDs and the labels should be comma-separated. An example should look like this:
+
+```
+30001,1,1,1,3,1,1,1,1,0
+30002,1,1,1,1,1,1,1,1,1
+...
+30830,2,2,1,1,1,1,1,1,1
+```
+
+
+***Graph-Based Conspiracy Source Detection*** subtask:
+* *UserID* - a FakeNews task internal Twitter user ID matching the test dataset user ID.
+* *Assigned Class Label* - a user class identifier value, 2 == ***Misinformation spreader***, 1 == ***Regular user***, 0 == ***Cannot Determine***.
+
+User IDs and the labels should be comma-separated. An example should look like this:
+
+```
+10887,1
+6891,1
+4947,2
+73517,0
+...
+1566,2
+```
+
+
+***Graph and Text-Based Conspiracy Detection*** subtask:
+Please submit runs in CSV format with the following fields defined:
+* *TweetID* - tweet ID matching the test dataset tweet ID.
+* *Assigned Class Label for Suppressed cures* - a class identifier value for the correcponding conspiracy theory in the papticular tweet, 3 == ***Promotes/Supports Conspiracy***, 2 == ***Discusses Consparacy***, 1 == ***Non-Conspiracy***, 0 == ***Cannot Determine*** (the same for the following Class Label fields). 
+* *Assigned Class Label for Behaviour and Mind Control* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Antivax* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Fake virus** - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Intentional Pandemic* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Harmful Radiation/ Influence* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Population reduction* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for New World Order* - aa class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Satanism* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+
+Tweet IDs and the labels should be comma-separated. An example should look like this:
+
+```
+50001,1,1,1,3,1,1,1,1,0
+50002,1,1,1,1,1,1,1,1,1
+...
+50646,2,2,1,1,1,1,1,1,1
+```
+
+Please note that test datasets are different in the subtasks ***Text-Based Misinformation and Conspiracies Detection*** and ***Graph and Text-Based Conspiracy Detection***.
+
+
+Please note that no white spaces or other special characters are allowed in the run files. When you create the filenames for your runs, please follow this pattern:
+
+```
+ME22FND_YYY_ZZZ.txt
+```
+
+where ME22FND is the code of the task, YYY is the acronym of your team and ZZZ is the number of your run. For the ***Text-Based Misinformation and Conspiracies Detection*** subtask run numbers are 001, 002, 003, 004, 005 and 006. For the ***Graph-Based Conspiracy Source Detection*** subtask run numbers are 101, 102, 103, 104, 105 and 106. For the ***Graph and Text-Based Conspiracy Detection*** subtask run numbers are 201, 202, 203, 204, 205 and 206. 
+
+*All run CSV files should use comma as a field separator, be UTF-8 encoded and stored in Linux-style text file format using only one line ending character (0x0A in hex, '\n' in C/C++)*.
+
+Instructions about where to upload the resulting runs will follow.
+
+
+### Cannot Determine label explanation
+
+This additional class is important when evaluating the multi-class classifiers. It is described in the related literature how it affects this metric, but in simple words: marking a sample that classifier cannot really understand as an *unknown class* affects the classification performance less negatively than marking the sample with a wrong class label. Exactly as it expected to be in the real-world classification tasks. Simple experiments can be conducted with *sklearn.metrics.matthews_corrcoef* function to see the effect of the additional 'Cannot Determine' class that does not exist in the development set. The sample code in Python that demomnstrates the effects of this additional class:
+
+```
+import sklearn.metrics
+y_true = ["1", "2", "3", "1"]
+y_pred = ["1", "2", "3", "1"]
+print(sklearn.metrics.matthews_corrcoef(y_true, y_pred))
+y_true = ["1", "2", "3", "1"]
+y_pred = ["1", "3", "2", "1"]
+print(sklearn.metrics.matthews_corrcoef(y_true, y_pred))
+y_true = ["1", "2", "3", "1"]
+y_pred = ["1", "0", "2", "1"]
+print(sklearn.metrics.matthews_corrcoef(y_true, y_pred))
+y_true = ["1", "2", "3", "1"]
+y_pred = ["1", "0", "0", "1"]
+print(sklearn.metrics.matthews_corrcoef(y_true, y_pred))
+y_true = ["1", "2", "3", "1"]
+y_pred = ["0", "0", "0", "0"]
+print(sklearn.metrics.matthews_corrcoef(y_true, y_pred))
+```
 
 
 ## References and recommended reading
