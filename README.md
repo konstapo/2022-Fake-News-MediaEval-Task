@@ -15,7 +15,7 @@ Spontaneous and intentional digital FakeNews wildfires over online social media 
 * 30 August: Development and test datasets release
 * 21 November AOE: Runs due
 * 22 November: Results returned
-* 01 December: Working notes paper due
+* 01 December AOE: Working notes paper due
 * 12-13 January 2023: 13th Annual MediaEval Workshop, Collocated with MMM 2023 in Bergen, Norway and also online
 
 
